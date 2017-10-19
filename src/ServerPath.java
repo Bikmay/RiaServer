@@ -15,7 +15,7 @@ public class ServerPath {
 
         try {
             while (true)
-            Power();//TODO цикл
+            Power();
         }
 
         catch (Exception ex)//Открываем поток для вывода с сокетом передатчика и отправляем ему кодовое сообщение и  код ошибки
