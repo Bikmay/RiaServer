@@ -7,6 +7,7 @@ import java.io.*;
  */
 public class ServerPath {
 
+
     private static int port = 44502;
     private static Socket SocOfExp;
 
@@ -50,12 +51,7 @@ public class ServerPath {
         DataInputStream in = new DataInputStream(sin);
         DataOutputStream out = new DataOutputStream(sout);
 
-        countListInputFonts = in.readInt();
 
-        for(int i=0;i<countListInputFonts;i++)
-        {
-            FontBase.ListInputFonts.add(in.readUTF());
-        }
 
 
 
