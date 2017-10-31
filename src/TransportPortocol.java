@@ -15,20 +15,23 @@ public class TransportPortocol {
     public TransportPortocol() throws IOException {
     }
 
-    public static void getFileFont() throws IOException {
+    public static void getFileFont(String fileName) throws IOException {
 
-        String fileName;
+
 
         int lengthfile;
 
 
         InputStream in = clientSocket.getInputStream();
+        OutputStream out = clientSocket.getOutputStream();
 
 
         DataInputStream dataInputStream = new DataInputStream(in);
+        DataOutputStream dataOutputStream = new DataOutputStream(out);
+
+        dataOutputStream.writeUTF("GT FONT" + fileName);
 
 
-        fileName = dataInputStream.readUTF();//Get NAME file of font
         lengthfile = dataInputStream.readInt();//Get LENGTH file
 
         byte[] file = new byte[lengthfile];
@@ -53,4 +56,6 @@ public class TransportPortocol {
         ServerSocket s_s = new ServerSocket(44501, 1);
         clientSocket = s_s.accept();
     }
+
+    public static boolean takeFileoFclient()
 }
